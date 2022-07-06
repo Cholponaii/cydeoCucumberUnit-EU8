@@ -1,21 +1,28 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.pages.GoogleSearchPage;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class GoogleStepDefinitions {
 
+    GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
     @When("user types apple and clicks enter")
     public void user_types_apple_and_clicks_enter() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        googleSearchPage.searchBox.sendKeys("apple"+ Keys.ENTER);
     }
     @Then("user sees apple in the google title")
     public void user_sees_apple_in_the_google_title() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String expectedTitle = "apple - Google Издөө";
+        String actualTitle = Driver.getDriver().getTitle();
+
+        //JUnit assertion eccepts first arg as expected,second as actual
+        Assert.assertEquals(expectedTitle,actualTitle);
+        //Assert.assertTrue(actualTitle.equals(expectedTitle));// it doesn't matter which arg is first
     }
 
         @When("user is on Google search page")
