@@ -21,7 +21,7 @@ public class GoogleStepDefinitions {
         String actualTitle = Driver.getDriver().getTitle();
 
         //JUnit assertion eccepts first arg as expected,second as actual
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals("Title is not expected",expectedTitle,actualTitle);
         //Assert.assertTrue(actualTitle.equals(expectedTitle));// it doesn't matter which arg is first
     }
 
@@ -34,7 +34,7 @@ public class GoogleStepDefinitions {
         String expectedTitle ="Google";
         String actualTitle = Driver.getDriver().getTitle();
 
-        Assert.assertEquals(actualTitle,expectedTitle);
+        Assert.assertEquals(expectedTitle,actualTitle);
 
         Driver.closeDriver();
     }

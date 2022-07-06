@@ -1,5 +1,7 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.utilities.Driver;
+import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
@@ -25,9 +27,11 @@ public class Hooks {
         System.out.println("====this will only apply to scenarios with @db tag");
     }
 
+    @After
     public void teardownScenario() {
-        System.out.println("====Closing browser using cucumber @After");
-        System.out.println("Scenario ended/ Take screenshot if failed!");
+        Driver.closeDriver();
+        //System.out.println("====Closing browser using cucumber @After");
+        //System.out.println("Scenario ended/ Take screenshot if failed!");
     }
 
     @BeforeStep
