@@ -17,7 +17,7 @@ public class Wiki_StepDefinitions {
     }
     @When("User types {string} in the wiki search box")
     public void user_types_in_the_wiki_search_box(String string) {
-        wikiSearchPage.searchBox.sendKeys("Steve Jobs");
+        wikiSearchPage.searchBox.sendKeys(string);
     }
     @When("User clicks wiki search button")
     public void user_clicks_wiki_search_button() {
