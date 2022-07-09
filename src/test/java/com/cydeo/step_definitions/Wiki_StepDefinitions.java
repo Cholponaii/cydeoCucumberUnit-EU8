@@ -34,6 +34,6 @@ public class Wiki_StepDefinitions {
     public void userSeesSteveJobsIsInTheMainHeader(String string) {
         Assert.assertTrue(wikiSearchPage.mainHeader.isDisplayed());
 
-        Assert.assertTrue(wikiSearchPage.mainHeader.getText().equals("Steve Jobs"));
+        Assert.assertTrue(wikiSearchPage.mainHeader.getText().equals(string));
     }
 }
