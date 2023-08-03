@@ -43,8 +43,23 @@ public class WebTable_StepDefinitions {
     }
 
     @When("user enters username {string} password {string} and logins")
-    public void user_enters_username_password_and_logins(String string, String string2) {
+    public void user_enters_username_password_and_logins(String username, String pw) {
 
+        webTableLoginPage.login(username,pw);
+
+        
     }
 
+    @When("user enters below credentials")
+    public void user_enters_below_credentials(io.cucumber.datatable.DataTable dataTable) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+        // Double, Byte, Short, Long, BigInteger or BigDecimal.
+        //
+        // For other transformations you can register a DataTableType.
+        throw new io.cucumber.java.PendingException();
+
+    }
 }

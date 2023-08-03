@@ -11,7 +11,8 @@ public class GoogleStepDefinitions {
 
     GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 
-    @When("user types apple and clicks enter")
+    @When("user types apple " +
+            "and clicks enter")
     public void user_types_and_clicks_enter2(String SearchKeyword) {
         googleSearchPage.searchBox.sendKeys(SearchKeyword+Keys.ENTER);
     }
@@ -25,7 +26,7 @@ public class GoogleStepDefinitions {
         String expectedTitle = string+" - Google Издөө";
         String actualTitle = Driver.getDriver().getTitle();
 
-        //JUnit assertion eccepts first arg as expected,second as actual
+        //Junit assertion eccepts first arg as expected,second as actual
         Assert.assertEquals("Title is not expected",expectedTitle,actualTitle);
 
 
@@ -38,7 +39,7 @@ public class GoogleStepDefinitions {
         String expectedTitle = "apple - Google Издөө";
         String actualTitle = Driver.getDriver().getTitle();
 
-        //JUnit assertion eccepts first arg as expected,second as actual
+        //Junit assertion eccepts first arg as expected,second as actual
         Assert.assertEquals("Title is not expected",expectedTitle,actualTitle);
         //Assert.assertTrue(actualTitle.equals(expectedTitle));// it doesn't matter which arg is first
     }
